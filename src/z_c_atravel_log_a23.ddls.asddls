@@ -21,7 +21,7 @@ define root view entity Z_C_ATRAVEL_LOG_A23
       @Semantics.currencyCode: true
       CurrencyCode,
       Description,
-      OverallStatus as TravelStatus,
+      OverallStatus,
       LastChangeAt,
       /* Associations */
       _Booking : redirected to composition child Z_C_ABOOKING_LOG_A223,

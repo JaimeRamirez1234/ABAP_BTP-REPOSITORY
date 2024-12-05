@@ -1,16 +1,17 @@
 @AbapCatalog.sqlViewName: 'ZV_TRAV_LOG_A223'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
-@AccessControl.authorizationCheck: #CHECK 
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Interface - TRAVEL'
-define root view Z_I_TRAVEL_LOG_A23 
-    as select from ztravel_log_a223 as Travel
+define root view Z_I_TRAVEL_LOG_A23
+  as select from ztravel_log_a223 as Travel
     composition [0..*] of Z_I_BOOKING_LOG_A223 as _Booking
     association [0..1] to /DMO/I_Agency as _Agency on $projection.AgencyId = _Agency.AgencyID
     association [0..1] to /DMO/I_Customer as _Customer on $projection.CustomerId = _Customer.CustomerID
     association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
 {
-    key travel_id as TravelId,
+
+   key travel_id as TravelId,
         agency_id as AgencyId,
         customer_id as CustomerId,
         begin_date as BeginDate,
@@ -35,5 +36,5 @@ define root view Z_I_TRAVEL_LOG_A23
         _Agency,
         _Customer,
         _Currency
-        
+       
 }

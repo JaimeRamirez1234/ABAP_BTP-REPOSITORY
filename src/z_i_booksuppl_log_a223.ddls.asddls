@@ -1,11 +1,11 @@
 @AbapCatalog.sqlViewName: 'ZV_BOOK_LOG_A223'
 @AbapCatalog.compiler.compareFilter: true
 @AbapCatalog.preserveKey: true
-@AccessControl.authorizationCheck: #NOT_REQUIRED
+@AccessControl.authorizationCheck: #CHECK
 @EndUserText.label: 'Interface - Booking Supplement'
 @Metadata.ignorePropagatedAnnotations: true
-define view Z_I_BOOKSUPPL_LOG_A223 
-        as select from zbooksuppl_loga2 as BookingSupplement
+define view Z_I_BOOKSUPPL_LOG_A223
+  as select from zbooksuppl_loga2 as BookingSupplement
         association to parent Z_I_BOOKING_LOG_A223 as _Booking on $projection.TravelId = _Booking.TravelId
                                                               and $projection.BookingId = _Booking.BookingId
         association [1..1] to Z_I_TRAVEL_LOG_A23 as _Travel on $projection.TravelId = _Travel.TravelId

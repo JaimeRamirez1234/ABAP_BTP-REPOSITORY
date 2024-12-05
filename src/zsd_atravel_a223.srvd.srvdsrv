@@ -1,4 +1,4 @@
-@EndUserText.label: 'Travel Approval'
+@EndUserText.label: 'Travel'
 define service ZSD_ATRAVEL_A223 {
   expose Z_C_ATRAVEL_LOG_A23   as ATravel;
   expose Z_C_ABOOKING_LOG_A223 as Booking;

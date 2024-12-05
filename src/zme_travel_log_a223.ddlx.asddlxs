@@ -39,7 +39,7 @@ annotate view Z_C_TRAVEL_LOG_A23
             @Consumption.valueHelpDefinition: [{ entity :
             {name: '/DMO/I_Agency', element: 'AgencyID' } }]
     @Search.defaultSearchElement: true
-    AgencyId;
+    AgencyID;
     @UI: {
         lineItem: [ { position: 30, importance: #HIGH } ],
         identification: [ { position: 30 } ],
@@ -67,7 +67,7 @@ annotate view Z_C_TRAVEL_LOG_A23
     @UI:{ identification: [{ position: 46 }] }
     Description;
     @UI: { lineItem: [ { position: 50, importance: #HIGH },
-         { type: #FOR_ACTION, dataAction: 'createTravelByTemplate', label: 'Create Travel by Template' } ],
+          { type: #FOR_ACTION, dataAction: 'createTravelByTemplate', label: 'Create Travel by Template' }],
            identification: [ { position: 45,
            label: 'Status [O(Open)|A(Accepted)|X(Canceled)]' }] }
     OverallStatus;

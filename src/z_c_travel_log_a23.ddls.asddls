@@ -7,7 +7,7 @@ define root view entity Z_C_TRAVEL_LOG_A23
 {
   key TravelId,
       @ObjectModel.text.element: [ 'AgencyName' ]
-      AgencyId,
+      AgencyID,
       _Agency.Name as AgencyName,
       @ObjectModel.text.element: [ 'CustomerName' ]
       CustomerId,
