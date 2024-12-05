@@ -39,7 +39,7 @@ annotate view Z_C_TRAVEL_LOG_A23
             @Consumption.valueHelpDefinition: [{ entity :
             {name: '/DMO/I_Agency', element: 'AgencyID' } }]
     @Search.defaultSearchElement: true
-    AgencyID;
+    AgencyId;
     @UI: {
         lineItem: [ { position: 30, importance: #HIGH } ],
         identification: [ { position: 30 } ],
@@ -73,5 +73,7 @@ annotate view Z_C_TRAVEL_LOG_A23
     OverallStatus;
     @UI.hidden: true
     LastChangeAt;
-          
+    @UI:{ lineItem: [{ position: 60, importance: #HIGH }] }
+    @EndUserText.label: 'Discount 10%'
+    DiscountPrice;
 }
