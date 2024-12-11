@@ -50,7 +50,7 @@ CLASS zcl_aux_travel_det_a223 IMPLEMENTATION.
        LOOP AT lt_read_booking INTO DATA(ls_booking)
             GROUP BY ls_booking-TravelId INTO DATA(lv_travel_key).
 
-            ASSIGN lt_read_travel[ KEY entity components TravelId = lV_travel_key ]
+            ASSIGN lt_read_travel[ KEY entity components TravelId = lv_travel_key ]
                 to FIELD-SYMBOL(<ls_travel>).
 
 
