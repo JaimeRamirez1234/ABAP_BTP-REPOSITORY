@@ -39,11 +39,25 @@ CLASS zcl_insert_data_log_a223 IMPLEMENTATION.
         where travel_id eq @lt_travel-travel_id
         INTO CORRESPONDING FIELDS OF TABLE @lt_booking.
 
-    SELECT * FROM /dmo/book_suppl
-       FOR ALL ENTRIES IN @lt_booking
-       WHERE travel_id eq @lt_booking-travel_id
-         AND booking_id eq @lt_booking-booking_id
-       INTO CORRESPONDING FIELDS OF TABLE @lt_book_sup.
+*    SELECT * FROM /dmo/book_suppl
+*       FOR ALL ENTRIES IN @lt_booking
+*       WHERE travel_id eq @lt_booking-travel_id
+*         AND booking_id eq @lt_booking-booking_id
+*       INTO CORRESPONDING FIELDS OF TABLE @lt_book_sup.
+
+     SELECT travel_id,
+            booking_id,
+            booking_supplement_id,
+            supplement_id,
+            price,
+            currency_code as Currency
+            FROM /dmo/book_suppl
+            FOR ALL ENTRIES IN @lt_booking
+            WHERE travel_id EQ @lt_booking-travel_id
+            AND   booking_id EQ @lt_booking-booking_id
+            INTO CORRESPONDING FIELDS OF TABLE @lt_book_sup.
+
+
 
    DELETE FROM: ztravel_log_a223,
                 zbooking_log_a23,

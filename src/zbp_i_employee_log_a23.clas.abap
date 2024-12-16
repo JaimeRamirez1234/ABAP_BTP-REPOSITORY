@@ -1,0 +1,5 @@
+CLASS zbp_i_employee_log_a23 DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF z_i_employee_log_a23.
+ENDCLASS.
+
+CLASS zbp_i_employee_log_a23 IMPLEMENTATION.
+ENDCLASS.
